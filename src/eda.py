@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import logging
+import os
+import sys
 
 logging.basicConfig(
     level=logging.INFO,
@@ -10,6 +12,9 @@ logging.basicConfig(
 )
 logging.info(
     '****************************Logging started for EDA module****************************')
+
+sys.path.append(os.path.abspath('..'))
+logging.info(' eda module added to system path ')
 
 
 class EdaAnalysis:
