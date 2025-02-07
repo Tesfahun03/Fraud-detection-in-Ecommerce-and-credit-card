@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import logging
 import sys
 import os
-sys.path.append(os.path.abspath(''))
+sys.path.append(os.path.abspath('..'))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,7 +32,7 @@ class FeatureEngineering:
             pd.Daaframe: pandas dataframe with the new column inserted.
         """
         logging.info(
-            f'Inserting new column to the column index of {column_index + 1}')
+            'Inserting new column to the column')
         column_index = self.data.columns.get_loc(column)
         self.data.insert(column_index + 1, new_column_name, value)
         logging.info(f'Column {new_column_name} inserted successfully')
@@ -51,6 +51,7 @@ class FeatureEngineering:
             purchase_weekday = self.data['purchase_time'].dt.dayofweek
             self.perform_insertion(
                 'purchase_time', 'purchase_weekday', purchase_weekday)
+            return self.data
         except Exception as e:
             logging.error("Error creating purchase_weekday column: %s", str(e))
             raise
@@ -60,6 +61,7 @@ class FeatureEngineering:
             logging.info(f'creating purchase hour based on purchase time')
             day_of_hr = self.data['purchase_time'].dt.hour
             self.perform_insertion('purchase_time', 'purchase_hour', day_of_hr)
+            return self.data
         except Exception as e:
             logging.error(
                 f'canot extract hout of the day from purchase-time  :: {e}')
@@ -78,7 +80,7 @@ class FeatureEngineering:
                 'user_id')['user_id'].transform('count')
             self.perform_insertion(
                 'user_id', 'transaction_frequency', transaction_freq)
-
+            return self.data
         except Exception as e:
             logging.error(
                 "Error creating transaction_frequency column: %s", str(e))
@@ -97,6 +99,7 @@ class FeatureEngineering:
             velocity = (self.data['purchase_time'] -
                         self.data['signup_time']).dt.total_seconds()
             self.perform_insertion('purchase_time', 'velocity_check', velocity)
+            return self.data
         except Exception as e:
             logging.error("Error creating velocity_check column: %s", str(e))
             raise
