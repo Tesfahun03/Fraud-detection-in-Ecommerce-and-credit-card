@@ -1,0 +1,26 @@
+2025-02-07 20:56:16,557 - root - INFO - ****************************Logging started for Feature Engineering module****************************
+2025-02-07 20:56:17,360 - root - INFO - Creating purchase_weekday column
+2025-02-07 20:56:17,371 - root - INFO - Inserting new column to the column
+2025-02-07 20:56:17,374 - root - INFO - Column purchase_weekday inserted successfully
+2025-02-07 20:56:35,574 - root - INFO - creating purchase hour based on purchase time
+2025-02-07 20:56:35,590 - root - INFO - Inserting new column to the column
+2025-02-07 20:56:35,606 - root - INFO - Column purchase_hour inserted successfully
+2025-02-07 20:56:44,564 - root - INFO - Creating transaction_frequency column
+2025-02-07 20:56:44,606 - root - INFO - Inserting new column to the column
+2025-02-07 20:56:44,609 - root - INFO - Column transaction_frequency inserted successfully
+2025-02-07 20:57:09,625 - root - INFO - Creating velocity_check column
+2025-02-07 20:57:09,657 - root - INFO - Inserting new column to the column
+2025-02-07 20:57:09,658 - root - INFO - Column velocity_check inserted successfully
+2025-02-07 21:00:11,473 - root - INFO - ****************************Logging started for Feature Engineering module****************************
+2025-02-07 21:00:12,271 - root - INFO - Creating purchase_weekday column
+2025-02-07 21:00:12,278 - root - INFO - Inserting new column to the column
+2025-02-07 21:00:12,278 - root - INFO - Column purchase_weekday inserted successfully
+2025-02-07 21:00:12,361 - root - INFO - creating purchase hour based on purchase time
+2025-02-07 21:00:12,362 - root - INFO - Inserting new column to the column
+2025-02-07 21:00:12,362 - root - INFO - Column purchase_hour inserted successfully
+2025-02-07 21:00:12,445 - root - INFO - Creating transaction_frequency column
+2025-02-07 21:00:12,467 - root - INFO - Inserting new column to the column
+2025-02-07 21:00:12,468 - root - INFO - Column transaction_frequency inserted successfully
+2025-02-07 21:00:12,540 - root - INFO - Creating velocity_check column
+2025-02-07 21:00:12,540 - root - INFO - Inserting new column to the column
+2025-02-07 21:00:12,540 - root - INFO - Column velocity_check inserted successfully

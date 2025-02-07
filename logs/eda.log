@@ -1,0 +1,28 @@
+2025-02-07 20:06:43,309 - root - INFO - ****************************Logging started for EDA module****************************
+2025-02-07 20:06:43,314 - root - INFO -  eda module added to system path 
+2025-02-07 20:06:43,314 - root - INFO - EDA Analysis class created
+2025-02-07 20:06:43,314 - root - INFO - EDA Plot class created by inheriting EDAAnlysis class
+2025-02-07 20:07:50,137 - root - INFO - ****************************Logging started for EDA module****************************
+2025-02-07 20:07:50,137 - root - INFO -  eda module added to system path 
+2025-02-07 20:07:50,137 - root - INFO - EDA Analysis class created
+2025-02-07 20:07:50,137 - root - INFO - EDA Plot class created by inheriting EDAAnlysis class
+2025-02-07 20:08:23,666 - root - INFO - ****************************Logging started for EDA module****************************
+2025-02-07 20:08:23,667 - root - INFO -  eda module added to system path 
+2025-02-07 20:08:23,667 - root - INFO - EDA Analysis class created
+2025-02-07 20:08:23,667 - root - INFO - EDA Plot class created by inheriting EDAAnlysis class
+2025-02-07 20:08:23,684 - root - INFO - ****************************Logging started for IP Geolocation module****************************
+2025-02-07 20:15:27,268 - root - INFO - Getting categorical features or columns
+2025-02-07 20:15:27,456 - root - INFO - Categorical distribution calculated
+2025-02-07 20:15:53,688 - root - INFO - Selecting numerical columns for correlation matrix calculation
+2025-02-07 20:15:53,735 - root - INFO - Correlation matrix calculated
+2025-02-07 20:16:29,829 - root - INFO - Descriptive statistics calculated
+2025-02-07 20:16:37,002 - root - INFO - Calculating missing values
+2025-02-07 20:16:37,052 - root - INFO - Missing values calculated
+2025-02-07 20:17:55,347 - root - INFO - Plotting distribution of categorical column age
+2025-02-07 20:18:13,499 - root - INFO - Plotting distribution of categorical column class
+2025-02-07 20:18:36,935 - root - INFO - Plotting distribution of numerical column purchase_value
+2025-02-07 20:19:25,751 - root - INFO - Plotting distribution of categorical column browser
+2025-02-07 20:19:54,024 - root - INFO - Plotting distribution of categorical column source
+2025-02-07 20:20:13,821 - root - INFO - Plotting distribution of numerical column age
+2025-02-07 20:22:13,052 - root - INFO - Plotting distribution of categorical column sex
+2025-02-07 20:22:32,130 - root - INFO - Plotting distribution of categorical column device_id
