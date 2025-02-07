@@ -8,7 +8,9 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     filename='../logs/eda.log'
 )
-logging.info('****************************Logging started for EDA module****************************')
+logging.info(
+    '****************************Logging started for EDA module****************************')
+
 
 class EdaAnalysis:
     """
@@ -151,6 +153,24 @@ class EdaPlot(EdaAnalysis):
         logging.info('Plotting correlation matrix')
         eda = EdaAnalysis(self.data)
         plt.matshow(eda.get_correlation())
+        plt.show()
+
+    def scatter_plot(self, x, y):
+        """
+        Plots a scatter plot of two numerical columns in the dataset.
+        This method creates a scatter plot of two numerical columns in the dataset
+        using matplotlib's scatter function. The x and y columns are specified as
+        arguments to the method.
+        Parameters:
+        x (str): The name of the column to plot on the x-axis.
+        y (str): The name of the column to plot on the y-axis.
+        Returns:
+        None
+        """
+        logging.info(f'Plotting scatter plot for columns {x} and {y}')
+        plt.scatter(self.data[x], self.data[y])
+        plt.xlabel(x)
+        plt.ylabel(y)
         plt.show()
 
     def plot_boxplot(self, column):
