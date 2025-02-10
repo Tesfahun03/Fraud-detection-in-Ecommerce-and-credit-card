@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = C:/Users/Temp/Desktop/KAI-Projects/dvc-storage

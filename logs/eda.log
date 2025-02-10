@@ -26,3 +26,11 @@
 2025-02-07 20:20:13,821 - root - INFO - Plotting distribution of numerical column age
 2025-02-07 20:22:13,052 - root - INFO - Plotting distribution of categorical column sex
 2025-02-07 20:22:32,130 - root - INFO - Plotting distribution of categorical column device_id
+2025-02-10 18:54:06,422 - root - INFO - ****************************Logging started for EDA module****************************
+2025-02-10 18:54:06,422 - root - INFO -  eda module added to system path 
+2025-02-10 18:54:06,422 - root - INFO - EDA Analysis class created
+2025-02-10 18:54:06,423 - root - INFO - EDA Plot class created by inheriting EDAAnlysis class
+2025-02-10 18:54:23,040 - root - INFO - Getting categorical features or columns
+2025-02-10 18:54:23,463 - root - INFO - Categorical distribution calculated
+2025-02-10 18:54:29,521 - root - INFO - Selecting numerical columns for correlation matrix calculation
+2025-02-10 18:54:29,577 - root - INFO - Correlation matrix calculated
