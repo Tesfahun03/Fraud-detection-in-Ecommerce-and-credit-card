@@ -54,7 +54,7 @@ class EdaAnalysis:
         logging.info('Descriptive statistics calculated')
         return self.data.describe()
 
-    def get_correlation(self, *args):
+    def get_correlation(self, *args, **kwargs):
         """
         Calculate and return the correlation matrix for numerical columns in the dataset.
         This method selects numerical columns (int64 and float64) from the dataset and computes
@@ -72,6 +72,7 @@ class EdaAnalysis:
             correlation = numericaldata.corr()
             logging.info('Correlation matrix calculated')
             return correlation
+
         except Exception as e:
             logging.error(f'Error in calculating correlation matrix: {e}')
 
