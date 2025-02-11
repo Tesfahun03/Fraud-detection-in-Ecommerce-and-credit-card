@@ -1,6 +1,0 @@
-artifact_location: file:///c:/Users/Temp/Desktop/KAI-Projects/Fraud-detection-in-Ecommerce-and-credit-card/notebooks/mlruns/576791729445789306
-creation_time: 1739300501331
-experiment_id: '576791729445789306'
-last_update_time: 1739300501331
-lifecycle_stage: active
-name: decision_tree_regressor
