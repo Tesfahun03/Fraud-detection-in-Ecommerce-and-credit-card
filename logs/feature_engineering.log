@@ -24,3 +24,16 @@
 2025-02-07 21:00:12,540 - root - INFO - Creating velocity_check column
 2025-02-07 21:00:12,540 - root - INFO - Inserting new column to the column
 2025-02-07 21:00:12,540 - root - INFO - Column velocity_check inserted successfully
+2025-02-10 19:05:18,164 - root - INFO - ****************************Logging started for Feature Engineering module****************************
+2025-02-10 19:05:26,291 - root - INFO - Creating purchase_weekday column
+2025-02-10 19:05:26,302 - root - INFO - Inserting new column to the column
+2025-02-10 19:05:26,302 - root - INFO - Column purchase_weekday inserted successfully
+2025-02-10 19:05:28,935 - root - INFO - creating purchase hour based on purchase time
+2025-02-10 19:05:28,935 - root - INFO - Inserting new column to the column
+2025-02-10 19:05:28,935 - root - INFO - Column purchase_hour inserted successfully
+2025-02-10 19:05:34,800 - root - INFO - Creating transaction_frequency column
+2025-02-10 19:05:34,838 - root - INFO - Inserting new column to the column
+2025-02-10 19:05:34,838 - root - INFO - Column transaction_frequency inserted successfully
+2025-02-10 19:05:37,871 - root - INFO - Creating velocity_check column
+2025-02-10 19:05:37,878 - root - INFO - Inserting new column to the column
+2025-02-10 19:05:37,878 - root - INFO - Column velocity_check inserted successfully
