@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Temp/Desktop/KAI-Projects/Fraud-detection-in-Ecommerce-and-credit-card/notebooks/mlruns/557754430958171382/f37f5916b8ae4edb81864d6efbaf620c/artifacts
+end_time: 1739300649426
+entry_point_name: ''
+experiment_id: '557754430958171382'
+lifecycle_stage: active
+run_id: f37f5916b8ae4edb81864d6efbaf620c
+run_name: gaudy-cat-109
+run_uuid: f37f5916b8ae4edb81864d6efbaf620c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739300544519
+status: 3
+tags: []
+user_id: Temp
