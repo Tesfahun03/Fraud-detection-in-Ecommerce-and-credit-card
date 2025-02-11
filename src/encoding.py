@@ -9,6 +9,9 @@ logging.basicConfig(
     level=logging.INFO
 )
 
+logging.info(
+    '****************************Logging started for Ecoding Data module****************************')
+
 
 class DataProcessing:
     """
@@ -37,24 +40,22 @@ class DataProcessing:
         """_encodes catagorical coloumns into sum randomly assigned numbers for regression purpose_
 
         Returns:
-            _DataFrame_: _encoded dataframe_
+            _DataFrame_: _encoded_dataframe_
         """
         logging.info("Starting encoding of categorical columns.")
         columns_label = self.data.select_dtypes(
-            include=['object', 'bool']).columns
+            include=['object']).columns
         df_lbl = self.data.copy()
-        for col in columns_label:
-            try:
-
+        try:
+            for col in columns_label:
                 label = LabelEncoder()
                 label.fit(list(self.data[col].values))
                 df_lbl[col] = label.transform(df_lbl[col].values)
-                return df_lbl
-
-            except Exception as e:
-                logging.error(f'Error while trying to encode data:: {e}')
-                raise
-        logging.info("Encoding completed.")
+            logging.info("Encoding completed.")
+            return df_lbl
+        except Exception as e:
+            logging.error(f'Error while trying to encode data:: {e}')
+            raise
 
     def corr_with_target(self, target):
         logging.info(f"Calculating correlation with target: {target}")
@@ -78,13 +79,14 @@ class DataProcessing:
             include=['object', 'float64', 'int64']).columns
         df_standard = dataframe.copy()
         standard = StandardScaler()
-        for col in column_scaler:
-            try:
+        try:
+            for col in column_scaler:
+
                 df_standard[column_scaler] = standard.fit_transform(
                     df_standard[column_scaler])
-                return df_standard
-            except Exception as e:
-                logging.error(
-                    f'Error occured while standardizing data :: Erorr :- {e}')
-                raise
-        logging.info("Standardization completed.")
+            logging.info("Standardization completed.")
+            return df_standard
+        except Exception as e:
+            logging.error(
+                f'Error occured while standardizing data :: Erorr :- {e}')
+            raise
