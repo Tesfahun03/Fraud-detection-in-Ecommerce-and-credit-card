@@ -1,2 +1,19 @@
 2025-02-11 21:56:18,030 - root - INFO - ****************************Logging started for Model Training module****************************
 2025-02-11 21:56:18,030 - root - INFO - ****************************Logging started for Ecoding Data module****************************
+2025-02-11 21:56:30,102 - root - INFO - DataProcessing instance created.
+2025-02-11 21:56:31,453 - root - INFO - Starting encoding of categorical columns.
+2025-02-11 21:56:34,307 - root - INFO - Encoding completed.
+2025-02-11 21:56:36,766 - root - INFO - Starting standardization of dataframe.
+2025-02-11 21:56:39,135 - root - INFO - Standardization completed.
+2025-02-11 21:56:53,315 - root - INFO - Data split with [ --- 80%|20% --- ] successfully.
+2025-02-11 22:01:41,683 - root - INFO - initializing decision tree
+2025-02-11 22:01:41,683 - root - INFO - fitting train set to --- [DecisionTree Regressor] ---
+2025-02-11 22:01:48,270 - root - INFO - Decision Tree Regressor model trained successfully.
+2025-02-11 22:01:48,295 - root - INFO - Model evaluated successfully.
+2025-02-11 22:02:05,697 - root - INFO - fitting train set to --- [XGBRegressor Regressor] ---
+2025-02-11 22:02:06,180 - root - INFO - XGBoost model trained successfully.
+2025-02-11 22:02:06,202 - root - INFO - Model evaluated successfully.
+2025-02-11 22:02:24,657 - root - INFO - initializing random forest with all CPUs
+2025-02-11 22:02:24,657 - root - INFO - fitting train set to --- [RandomForest Regressor] ---
+2025-02-11 22:03:59,338 - root - INFO - Random Forest model trained successfully.
+2025-02-11 22:03:59,506 - root - INFO - Model evaluated successfully.
