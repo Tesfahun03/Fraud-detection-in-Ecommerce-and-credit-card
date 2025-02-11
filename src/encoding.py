@@ -69,10 +69,10 @@ class DataProcessing:
         """_standrardize the dataset columns_
 
         Args:
-            dataframe (_Pd.DataFrame_): _pandas dataframe_
+            dataframe ( Pd.DataFrame ): _pandas_dataframe(endoded data)_
 
         Returns:
-            _Pd.Dataframe_: _standardize dataframe_
+            Pd.Dataframe: standardize_dataframe
         """
         logging.info("Starting standardization of dataframe.")
         column_scaler = dataframe.select_dtypes(
