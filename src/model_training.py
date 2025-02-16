@@ -67,7 +67,7 @@ class TrainData:
         self.x_train = x_train
         self.y_train = y_train
 
-    def decision_tree_regressor(self):
+    def decision_tree_Classifier(self):
         """
         Initializes the Decision Tree Regressor model and fits it to the training data.
 
@@ -110,7 +110,7 @@ class TrainData:
             logging.error(f"Error training Random Forest model: {e}")
             raise
 
-    def xgboost(self):
+    def xgboost_classifier(self):
         """
         Initializes the XGBoost model and fits it to the training data.
 
