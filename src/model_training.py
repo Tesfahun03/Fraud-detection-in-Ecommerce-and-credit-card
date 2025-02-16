@@ -1,9 +1,10 @@
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
-from xgboost import XGBRegressor
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 import logging
+
 
 logging.basicConfig(
     filename='../logs/model-training.logs',
@@ -66,7 +67,7 @@ class TrainData:
         self.x_train = x_train
         self.y_train = y_train
 
-    def decision_tree_regressor(self):
+    def decision_tree_Classifier(self):
         """
         Initializes the Decision Tree Regressor model and fits it to the training data.
 
@@ -77,9 +78,9 @@ class TrainData:
         """
         try:
             logging.info('initializing decision tree')
-            decision_tree_model = DecisionTreeRegressor(random_state=42)
+            decision_tree_model = DecisionTreeClassifier(random_state=42)
             logging.info(
-                'fitting train set to --- [DecisionTree Regressor] ---')
+                'fitting train set to --- [DecisionTree Classifier] ---')
             decision_tree_model.fit(self.x_train, self.y_train)
             logging.info("Decision Tree Regressor model trained successfully.")
             return decision_tree_model
@@ -98,10 +99,10 @@ class TrainData:
         """
         try:
             logging.info('initializing random forest with all CPUs')
-            random_forest_model = RandomForestRegressor(
-                n_estimators=100, n_jobs=-1)
+            random_forest_model = RandomForestClassifier(
+                n_estimators=100, n_jobs=-1, class_weight="balanced")
             logging.info(
-                'fitting train set to --- [RandomForest Regressor] ---')
+                'fitting train set to --- [RandomForest Classifier] ---')
             random_forest_model.fit(self.x_train, self.y_train)
             logging.info("Random Forest model trained successfully.")
             return random_forest_model
@@ -109,7 +110,7 @@ class TrainData:
             logging.error(f"Error training Random Forest model: {e}")
             raise
 
-    def xgboost(self):
+    def xgboost_classifier(self):
         """
         Initializes the XGBoost model and fits it to the training data.
 
@@ -119,9 +120,10 @@ class TrainData:
             An XGBoost model fitted on the training data.
         """
         try:
-            xg_model = XGBRegressor(random_state=42)
+            # Adjust scale_pos_weight based on imbalance
+            xg_model = XGBClassifier(random_state=42, scale_pos_weight=49)
             logging.info(
-                'fitting train set to --- [XGBRegressor Regressor] ---')
+                'fitting train set to --- [XGBRegressor Classifier] ---')
             xg_model.fit(self.x_train, self.y_train)
             logging.info("XGBoost model trained successfully.")
             return xg_model
@@ -156,15 +158,17 @@ class EvaluateModel:
         Returns:
         -------
         tuple
-            A tuple containing the Mean Absolute Error, Mean Squared Error, R-squared score, and predicted values.
+            A tuple containing the Accuracy, precision, recall, f1, roc_auc and predicted values.
         """
         try:
             y_pred = model.predict(x_test)
-            mae = mean_absolute_error(y_test, y_pred)
-            mse = mean_squared_error(y_test, y_pred)
-            r2 = r2_score(y_test, y_pred)
+            accuracy = accuracy_score(y_test, y_pred)
+            precision = precision_score(y_test, y_pred)
+            recall = recall_score(y_test, y_pred)
+            f1 = f1_score(y_test, y_pred)
+            roc_auc = roc_auc_score(y_test, y_pred)
             logging.info("Model evaluated successfully.")
-            return mae, mse, r2, y_pred
+            return accuracy, precision, recall, f1, roc_auc, y_pred
         except Exception as e:
             logging.error(f"Error evaluating model: {e}")
             raise
