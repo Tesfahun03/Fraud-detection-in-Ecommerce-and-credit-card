@@ -1,19 +1,59 @@
-2025-02-11 21:56:18,030 - root - INFO - ****************************Logging started for Model Training module****************************
-2025-02-11 21:56:18,030 - root - INFO - ****************************Logging started for Ecoding Data module****************************
-2025-02-11 21:56:30,102 - root - INFO - DataProcessing instance created.
-2025-02-11 21:56:31,453 - root - INFO - Starting encoding of categorical columns.
-2025-02-11 21:56:34,307 - root - INFO - Encoding completed.
-2025-02-11 21:56:36,766 - root - INFO - Starting standardization of dataframe.
-2025-02-11 21:56:39,135 - root - INFO - Standardization completed.
-2025-02-11 21:56:53,315 - root - INFO - Data split with [ --- 80%|20% --- ] successfully.
-2025-02-11 22:01:41,683 - root - INFO - initializing decision tree
-2025-02-11 22:01:41,683 - root - INFO - fitting train set to --- [DecisionTree Regressor] ---
-2025-02-11 22:01:48,270 - root - INFO - Decision Tree Regressor model trained successfully.
-2025-02-11 22:01:48,295 - root - INFO - Model evaluated successfully.
-2025-02-11 22:02:05,697 - root - INFO - fitting train set to --- [XGBRegressor Regressor] ---
-2025-02-11 22:02:06,180 - root - INFO - XGBoost model trained successfully.
-2025-02-11 22:02:06,202 - root - INFO - Model evaluated successfully.
-2025-02-11 22:02:24,657 - root - INFO - initializing random forest with all CPUs
-2025-02-11 22:02:24,657 - root - INFO - fitting train set to --- [RandomForest Regressor] ---
-2025-02-11 22:03:59,338 - root - INFO - Random Forest model trained successfully.
-2025-02-11 22:03:59,506 - root - INFO - Model evaluated successfully.
+2025-02-16 20:15:08,901 - root - INFO - ****************************Logging started for Model Training module****************************
+2025-02-16 20:15:30,197 - root - INFO - DataProcessing instance created.
+2025-02-16 20:15:31,892 - root - INFO - Starting encoding of categorical columns.
+2025-02-16 20:15:34,550 - root - INFO - Encoding completed.
+2025-02-16 20:15:37,422 - root - INFO - Starting standardization of dataframe.
+2025-02-16 20:15:38,784 - root - INFO - Standardization completed.
+2025-02-16 20:15:45,362 - root - INFO - Data split with [ --- 80%|20% --- ] successfully.
+2025-02-16 20:18:01,345 - root - INFO - initializing decision tree
+2025-02-16 20:18:01,345 - root - INFO - fitting train set to --- [DecisionTree Classifier] ---
+2025-02-16 20:18:01,362 - root - ERROR - Error training Decision Tree Regressor model: Unknown label type: continuous. Maybe you are trying to fit a classifier, which expects discrete classes on a regression target with continuous values.
+2025-02-16 20:25:57,112 - root - INFO - ****************************Logging started for Model Training module****************************
+2025-02-16 20:25:57,112 - root - INFO - ****************************Logging started for Ecoding Data module****************************
+2025-02-16 20:26:24,372 - root - INFO - DataProcessing instance created.
+2025-02-16 20:26:25,648 - root - INFO - Starting encoding of categorical columns.
+2025-02-16 20:26:27,545 - root - INFO - Encoding completed.
+2025-02-16 20:27:31,897 - root - INFO - Starting standardization of dataframe.
+2025-02-16 20:27:32,867 - root - INFO - Standardization completed.
+2025-02-16 20:34:01,127 - root - INFO - Starting standardization of dataframe.
+2025-02-16 20:34:02,250 - root - INFO - Standardization completed.
+2025-02-16 20:34:36,506 - root - INFO - Starting standardization of dataframe.
+2025-02-16 20:34:37,733 - root - INFO - Standardization completed.
+2025-02-16 20:35:15,850 - root - INFO - Starting standardization of dataframe.
+2025-02-16 20:35:17,396 - root - INFO - Standardization completed.
+2025-02-16 20:35:58,451 - root - INFO - Data split with [ --- 80%|20% --- ] successfully.
+2025-02-16 20:37:24,552 - root - INFO - ****************************Logging started for Model Training module****************************
+2025-02-16 20:37:59,475 - root - INFO - initializing decision tree
+2025-02-16 20:37:59,475 - root - INFO - fitting train set to --- [DecisionTree Classifier] ---
+2025-02-16 20:38:03,229 - root - INFO - Decision Tree Regressor model trained successfully.
+2025-02-16 20:38:03,273 - root - INFO - Model evaluated successfully.
+2025-02-16 20:38:42,444 - root - INFO - fitting train set to --- [XGBRegressor Classifier] ---
+2025-02-16 20:38:42,912 - root - INFO - XGBoost model trained successfully.
+2025-02-16 20:38:42,946 - root - INFO - Model evaluated successfully.
+2025-02-16 20:38:51,694 - root - INFO - initializing random forest with all CPUs
+2025-02-16 20:38:51,694 - root - INFO - fitting train set to --- [RandomForest Classifier] ---
+2025-02-16 20:39:01,396 - root - INFO - Random Forest model trained successfully.
+2025-02-16 20:39:01,561 - root - INFO - Model evaluated successfully.
+2025-02-16 20:39:35,313 - root - INFO - Model evaluated successfully.
+2025-02-16 20:40:56,398 - root - INFO - Model evaluated successfully.
+2025-02-16 20:40:56,563 - root - INFO - Model evaluated successfully.
+2025-02-16 20:40:56,613 - root - INFO - Model evaluated successfully.
+2025-02-16 20:41:35,587 - root - INFO - Model evaluated successfully.
+2025-02-16 20:41:35,746 - root - INFO - Model evaluated successfully.
+2025-02-16 20:41:35,784 - root - INFO - Model evaluated successfully.
+2025-02-16 20:48:31,128 - root - INFO - Initializing SHAP explainer...
+2025-02-16 20:49:00,056 - root - ERROR - Error generating SHAP explanations: Additivity check failed in TreeExplainer! Please ensure the data matrix you passed to the explainer is the same shape that the model was trained on. If your data shape is correct then please report this on GitHub. This check failed because for one of the samples the sum of the SHAP values was 1.000000, while the model output was 0.000000. If this difference is acceptable you can set check_additivity=False to disable this check.
+2025-02-16 22:09:35,376 - root - INFO - Initializing SHAP explainer...
+2025-02-16 22:10:04,312 - root - INFO - Generating SHAP plots...
+2025-02-16 22:10:04,479 - root - ERROR - Error generating SHAP explanations: only integer scalar arrays can be converted to a scalar index
+2025-02-16 22:13:10,984 - root - INFO - Initializing SHAP explainer...
+2025-02-16 22:13:39,997 - root - INFO - Generating SHAP plots...
+2025-02-16 22:13:41,264 - root - INFO - SHAP summary plot saved.
+2025-02-16 22:13:41,266 - root - ERROR - Error generating SHAP explanations: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 50
+2025-02-16 22:14:26,962 - root - INFO - Initializing SHAP explainer...
+2025-02-16 22:14:56,102 - root - INFO - Generating SHAP plots...
+2025-02-16 22:14:57,120 - root - INFO - SHAP summary plot saved.
+2025-02-16 22:16:30,245 - root - INFO - Initializing SHAP explainer...
+2025-02-16 22:16:59,026 - root - INFO - Generating SHAP plots...
+2025-02-16 22:17:00,130 - root - INFO - SHAP summary plot saved.
+2025-02-16 22:17:00,132 - root - INFO - Initializing SHAP explainer...

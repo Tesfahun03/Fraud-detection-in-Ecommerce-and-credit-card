@@ -6,19 +6,17 @@ import matplotlib.pyplot as plt
 import logging
 
 logging.basicConfig(
-    filename='../logs/model-explainability.logs',
+    filename='../logs/model-explainability.log',
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
-logging.info('****************************Logging started for Model Explainability module****************************')
 
 
 class ModelExplainability:
     """
     A class to explain machine learning models using SHAP and LIME.
     """
-    
+
     def __init__(self, model, x_train, x_test, feature_names):
         """
         Initialize the explainability class with model, training and test data.
@@ -38,7 +36,7 @@ class ModelExplainability:
         self.x_train = x_train
         self.x_test = x_test
         self.feature_names = feature_names
-        
+
     def explain_with_shap(self):
         """
         Explain the model using SHAP values and generate plots.
@@ -46,19 +44,24 @@ class ModelExplainability:
         try:
             logging.info('Initializing SHAP explainer...')
             explainer = shap.Explainer(self.model, self.x_train)
-            shap_values = explainer(self.x_test)
-            
+            shap_values = explainer(self.x_test, check_additivity=False)
+
             logging.info('Generating SHAP plots...')
             plt.figure()
-            shap.summary_plot(shap_values, self.x_test)
+            feature_names_array = np.array(
+                self.feature_names)  # Convert to NumPy array
+
+            shap.summary_plot(shap_values, self.x_test,
+                              feature_names=feature_names_array)
             plt.savefig('../plots/shap_summary_plot.png')
             logging.info('SHAP summary plot saved.')
-            
+
             plt.figure()
-            shap.dependence_plot(0, shap_values.values, self.x_test)
-            plt.savefig('../plots/shap_dependence_plot.png')
-            logging.info('SHAP dependence plot saved.')
-        
+            # shap.dependence_plot(0, shap_values.values,
+            #                      self.x_test, feature_names=feature_names_array)
+            # plt.savefig('../plots/shap_dependence_plot.png')
+            # logging.info('SHAP dependence plot saved.')
+
         except Exception as e:
             logging.error(f"Error generating SHAP explanations: {e}")
             raise
@@ -80,16 +83,19 @@ class ModelExplainability:
                 class_names=['Fraud', 'Not Fraud'],
                 mode='regression'
             )
-            
-            logging.info(f'Generating LIME explanation for instance {instance_index}...')
+
+            logging.info(
+                f'Generating LIME explanation for instance {instance_index}...')
             exp = explainer.explain_instance(
                 data_row=self.x_test.iloc[instance_index],
                 predict_fn=self.model.predict
             )
-            
-            exp.save_to_file(f'../plots/lime_explanation_{instance_index}.html')
-            logging.info(f'LIME explanation saved as HTML for instance {instance_index}.')
-        
+
+            exp.save_to_file(
+                f'../plots/lime_explanation_{instance_index}.html')
+            logging.info(
+                f'LIME explanation saved as HTML for instance {instance_index}.')
+
         except Exception as e:
             logging.error(f"Error generating LIME explanations: {e}")
             raise
